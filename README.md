@@ -45,7 +45,7 @@ Não haverá cobrança real, cadastro/login ou painel administrativo nesta vers�
 | Ordem | Etapa | Situação |
 | --- | --- | --- |
 | 1 | Preparar ferramentas, pasta e documentação inicial | Concluída |
-| 2 | Construir catálogo responsivo | A fazer |
+| 2 | Construir catálogo responsivo | Concluída |
 | 3 | Implementar carrinho | A fazer |
 | 4 | Implementar servidor, banco e pedidos | A fazer |
 | 5 | Publicar e validar link público | A fazer |
@@ -63,7 +63,16 @@ Os testes serão registrados apenas depois da execução. São testes internos, 
 
 ## Estado atual
 
-Esta é a preparação inicial. A aplicação e seus comandos de execução serão adicionados nas próximas etapas. Ainda não existe URL pública funcional.
+O catálogo responsivo já pode ser aberto pelo arquivo `public/index.html`. Os próximos passos são carrinho, servidor e banco. Ainda não existe URL pública funcional.
+
+## Entendendo o código no VS Code
+
+- `public/index.html`: estrutura da página, cabeçalho, apresentação e espaço do catálogo.
+- `public/estilo.css`: cores, tamanhos, grade de produtos e adaptação ao celular.
+- `public/catalogo.js`: lista dos seis cupcakes e criação dos cartões pelo JavaScript.
+- `public/imagens/`: fotografias ilustrativas geradas para o projeto anterior e reaproveitadas nesta versão.
+
+Os produtos usam dados temporários no JavaScript. Depois serão carregados do banco pelo servidor. Nesta etapa não há botão de compra, pois o carrinho será implementado a seguir.
 
 ## Hospedagem gratuita
 

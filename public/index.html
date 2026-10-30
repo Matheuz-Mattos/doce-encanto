@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os cupcakes da Doce Encanto e escolha seus sabores favoritos.">
+  <title>Doce Encanto | Cupcakes</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🧁%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="estilo.css">
+  <script src="catalogo.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#cardapio">Pular para o cardápio</a>
+  <header class="cabecalho">
+    <a class="marca" href="index.html">Doce Encanto<span>Cupcakes artesanais</span></a>
+    <a class="link-cardapio" href="#cardapio">Ver cardápio</a>
+  </header>
+
+  <main>
+    <section class="apresentacao" aria-labelledby="titulo">
+      <div class="texto-apresentacao">
+        <p class="assinatura">Um carinho em forma de cupcake</p>
+        <h1 id="titulo">Seu dia merece<br>um doce encanto.</h1>
+        <p>Chocolate, frutas e coberturas cremosas. Encontre seu favorito no nosso cardápio.</p>
+        <a class="botao" href="#cardapio">Escolher meus sabores</a>
+      </div>
+      <img class="foto-destaque" src="imagens/brigadeiro.png" alt="Cupcake de chocolate com cobertura de brigadeiro e granulado" width="600" height="600">
+    </section>
+
+    <section class="cardapio" id="cardapio" aria-labelledby="titulo-cardapio">
+      <div class="titulo-secao"><div><p>Feitos para adoçar</p><h2 id="titulo-cardapio">Nosso cardápio</h2></div><span>6 sabores para escolher</span></div>
+      <!-- O JavaScript preenche esta lista com os dados dos produtos. -->
+      <div class="produtos" id="lista-produtos"></div>
+      <noscript><p>Ative o JavaScript do navegador para visualizar os produtos.</p></noscript>
+      <p class="aviso">As imagens são ilustrativas. Nesta etapa, estamos apresentando o catálogo; o carrinho será adicionado em seguida.</p>
+    </section>
+  </main>
+
+  <footer><strong>Doce Encanto</strong><p>Projeto acadêmico de Matheus da Silva Mattos.</p><p>Pedidos e pagamentos demonstrativos.</p></footer>
+</body>
+</html>
