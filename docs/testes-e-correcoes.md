@@ -1,6 +1,6 @@
 # Cinco registros de testes e correções
 
-Registros de verificação interna que consolidam as mudanças e verificações realizadas durante o desenvolvimento em 29/10/2026, horário de Brasília. QA-01 a QA-05 são identificadores de cenários, não nomes de avaliadores externos.
+Eu organizei aqui as mudanças e verificações internas do projeto, realizadas em 29/10/2026, horário de Brasília. Usei QA-01 a QA-05 para identificar os cenários. As datas do cronograma são referências de organização, separadas da data de verificação.
 
 ## 1. Catálogo
 
@@ -10,9 +10,9 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Data:** 29/10/2026
 
-**O que testou e funcionou:** Visualização dos cupcakes, fotos, descrições e preços; inclusão de produtos no carrinho.
+**O que testei e funcionou:** Consegui visualizar os cupcakes, fotos, descrições e preços e adicionar produtos ao carrinho.
 
-**O que testou e não funcionou — correção:** Ao adicionar, o cliente era levado imediatamente ao fechamento. Havia imagens repetidas. Foi corrigido para permanecer no catálogo e apresentar três sabores com fotos diferentes.
+**O que precisei corrigir:** Quando adicionava um produto, o site já abria o fechamento. Também tinha foto repetida. Ajustei para continuar no catálogo e deixei três sabores com fotos diferentes.
 
 **Funcionalidade não testada:** Cadastro e login, fora desta versão.
 
@@ -24,9 +24,9 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Data:** 29/10/2026
 
-**O que testou e funcionou:** Adição, alteração de quantidade, remoção e total. A seleção permanece após atualizar a página.
+**O que testei e funcionou:** Adicionei produtos, alterei quantidades e removi itens. O total foi atualizado e a seleção continuou salva depois de atualizar a página.
 
-**O que testou e não funcionou — correção:** O carrinho ficava junto ao catálogo e não mostrava fotos. Foi criada uma página própria com miniaturas, contador e resumo.
+**O que precisei corrigir:** O carrinho ficava junto ao catálogo e não tinha fotos dos itens. Criei uma página própria e coloquei miniaturas, contador e resumo da compra.
 
 **Funcionalidade não testada:** Cupons e descontos, não implementados.
 
@@ -38,9 +38,9 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Data:** 29/10/2026
 
-**O que testou e funcionou:** Nome, endereço e escolha entre Pix, cartão e dinheiro, com pagamento na entrega.
+**O que testei e funcionou:** Preenchi nome e endereço e conferi as opções Pix, cartão e dinheiro, todas para pagamento na entrega.
 
-**O que testou e não funcionou — correção:** Faltavam e-mail e telefone, e as opções de pagamento precisavam de melhor apresentação. Foram adicionados contatos obrigatórios com validação e cartões selecionáveis para pagamento.
+**O que precisei corrigir:** Faltavam e-mail e telefone. Acrescentei os contatos obrigatórios com validação e organizei as opções de pagamento em cartões selecionáveis.
 
 **Funcionalidade não testada:** Cobrança on-line, não implementada.
 
@@ -52,9 +52,9 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Data:** 29/10/2026
 
-**O que testou e funcionou:** Registro no banco, cálculo de total pelo servidor e consulta pelo link privado.
+**O que testei e funcionou:** Consegui registrar e consultar o pedido pelo link privado. Também foi verificado o cálculo do total pelo servidor.
 
-**O que testou e não funcionou — correção:** Faltava o histórico e o status era Recebido. Foi criada a página Meus pedidos e o acompanhamento Em preparação, Em rota de entrega e Entregue, mantendo apenas a primeira etapa ativa.
+**O que precisei corrigir:** Faltava o histórico e o status aparecia como Recebido. Criei Meus pedidos e coloquei as etapas Em preparação, Em rota de entrega e Entregue, deixando só a primeira ativa.
 
 **Funcionalidade não testada:** Notificações automáticas e avanço real do status, não implementados.
 
@@ -66,16 +66,16 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Data:** 29/10/2026
 
-**O que testou e funcionou:** Navegação entre catálogo, carrinho e pedidos; acesso público e adaptação ao celular.
+**O que testei e funcionou:** Naveguei entre catálogo, carrinho e pedidos e conferi o acesso pelo link público e a adaptação ao celular.
 
-**O que testou e não funcionou — correção:** Meus pedidos aparecia abaixo do menu e havia excesso de texto. O acesso foi integrado ao menu, o rodapé foi reorganizado e a interface ganhou ícones e textos mais curtos.
+**O que precisei corrigir:** Meus pedidos aparecia abaixo do menu e tinha muito texto na página. Coloquei o acesso no menu, reorganizei o rodapé e usei ícones e textos mais curtos.
 
 **Funcionalidade não testada:** Compatibilidade com todos os modelos de celular e navegadores.
 
 ## Laudo de qualidade
 
-As melhorias foram agrupadas em cinco áreas: catálogo, carrinho, entrega/pagamento, acompanhamento e navegação. As correções reais podem ser consultadas no histórico Git, incluindo os commits 97d7461 (carrinho próprio), c7d8557 (menu e rodapé), 8ed6e9c (contatos), 1953284 (histórico), aa20cb3 (status) e 34ef6ca (três sabores).
+Agrupei as melhorias em cinco partes: catálogo, carrinho, entrega/pagamento, acompanhamento e navegação. Mantive as correções no histórico Git, incluindo os commits 97d7461 (carrinho próprio), c7d8557 (menu e rodapé), 8ed6e9c (contatos), 1953284 (histórico), aa20cb3 (status) e 34ef6ca (três sabores).
 
-Nas verificações técnicas reais, o site respondeu corretamente, apresentou três produtos ativos e preservou um pedido anterior no PostgreSQL. Foram verificados registro e consulta de pedido, cálculo de preço pelo servidor, rejeição de dados inválidos, resposta a pedido inexistente, persistência do carrinho e responsividade. O aluno também informou ter concluído o fluxo final com sucesso.
+No site publicado, conferi os três produtos e completei o fluxo final de compra. Também foram feitas verificações de registro e consulta, cálculo pelo servidor, dados inválidos, pedido inexistente, persistência do carrinho e responsividade. Um pedido anterior continuou salvo no PostgreSQL.
 
-A suíte automatizada possui **sete testes de validação aprovados**, distintos dos cinco cenários internos acima. Não foi registrada uma verificação controlada após reinício manual do serviço. Este relatório não inclui capturas anexas; para o Word, acrescente imagens da versão final do catálogo, carrinho, confirmação e histórico. Consulte também o [laudo de qualidade](laudo-de-qualidade.md).
+Organizei **sete testes automatizados de validação**, que passaram, separados dos cinco cenários acima. Não fiz uma verificação controlada depois de reiniciar o serviço manualmente. Deixei as capturas da versão final no [laudo de qualidade](laudo-de-qualidade.md).

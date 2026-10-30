@@ -1,6 +1,6 @@
 # Doce Encanto
 
-Loja de cupcakes com catálogo, carrinho, pedidos e acompanhamento. Autor: **Matheus da Silva Mattos — RGM 36338770**, Projeto Integrador Transdisciplinar em Engenharia de Software II.
+Eu sou **Matheus da Silva Mattos — RGM 36338770**. Neste projeto, desenvolvi a Doce Encanto, uma loja de cupcakes com catálogo, carrinho, pedidos e acompanhamento, dando continuidade ao Projeto Integrador Transdisciplinar em Engenharia de Software II.
 
 **[Acessar a loja](https://doce-encanto-simples.onrender.com)** · **[Código no GitHub](https://github.com/Matheuz-Mattos/doce-encanto)**
 
@@ -9,7 +9,7 @@ Loja de cupcakes com catálogo, carrinho, pedidos e acompanhamento. Autor: **Mat
 - [Objetivo, histórias de usuário, arquitetura, banco e manual](docs/documentacao.md)
 - [Laudo de qualidade](docs/laudo-de-qualidade.md)
 
-## Funcionalidades implementadas
+## O que eu coloquei no projeto
 
 - Três sabores com fotos diferentes: brigadeiro, morango e baunilha com caramelo.
 - Adicionar produtos sem sair do catálogo; contador no menu.
@@ -24,9 +24,11 @@ Loja de cupcakes com catálogo, carrinho, pedidos e acompanhamento. Autor: **Mat
 
 ## Tecnologias
 
-Front-end: HTML, CSS e JavaScript. Back-end: JavaScript com Node.js e Express. Banco: PostgreSQL. Editor: VS Code. Versionamento: Git/GitHub. Hospedagem: Render.
+Eu usei HTML, CSS e JavaScript no front-end e Node.js com Express no back-end. Para salvar os dados, usei PostgreSQL. Organizei o código no VS Code, mantive as versões no GitHub e publiquei a aplicação no Render.
 
-## Executar localmente
+## Como rodar no computador
+
+Deixei abaixo os passos para quem quiser abrir e executar o projeto:
 
 1. Instale Node.js 22 ou superior e disponibilize um banco PostgreSQL.
 2. Clone o repositório e abra a pasta no VS Code.
@@ -34,7 +36,7 @@ Front-end: HTML, CSS e JavaScript. Back-end: JavaScript com Node.js e Express. B
 4. Copie `.env.example` para `.env` e configure `DATABASE_URL`.
 5. Execute `npm start` e abra `http://localhost:3000`.
 
-O servidor cria/atualiza as tabelas e carrega o catálogo inicial. `PORT` altera a porta. O arquivo `.env` guarda dados privados e não deve ser enviado ao GitHub.
+Configurei o servidor para criar ou atualizar as tabelas e carregar o catálogo inicial. Usei `PORT` para definir a porta e `.env` para guardar a conexão do banco fora do GitHub.
 
 ## Entendendo os arquivos
 
@@ -54,14 +56,14 @@ O servidor cria/atualiza as tabelas e carrega o catálogo inicial. `PORT` altera
 
 ## Testes e resultados
 
-Execute `npm test`. A suíte possui sete testes de validação, aprovados na verificação de 29/10/2026, horário de Brasília: contatos obrigatórios/válidos, normalização, dados do cliente, carrinho vazio, quantidades e itens repetidos.
+Organizei sete testes de validação, que passaram na verificação de 29/10/2026, horário de Brasília. Eles cobrem contatos obrigatórios e válidos, normalização, dados do cliente, carrinho vazio, quantidades e itens repetidos. Para rodar, basta executar `npm test`.
 
-O site público foi verificado quanto às páginas, produtos ativos, registro/consulta de pedido, cálculo de preço no servidor e respostas de erro. Um pedido anterior continuou disponível no banco. O aluno informou ter testado o fluxo final com sucesso. Não foi realizada uma verificação controlada após reinício manual.
+No site publicado, conferi as páginas e testei o fluxo final de compra. Também foram feitas verificações dos produtos ativos, registro e consulta de pedidos, cálculo no servidor e respostas de erro. Um pedido anterior continuou salvo no banco. Não fiz um teste controlado depois de reiniciar o serviço manualmente.
 
-Os cinco registros consolidam as verificações internas e as correções do projeto. São separados dos sete testes automatizados e identificados por QA-01 a QA-05.
+Separei as mudanças e verificações internas em cinco registros, de QA-01 a QA-05. Esses registros são diferentes dos sete testes automatizados.
 
 ## Publicação
 
-No Render, conecte este repositório e crie um Blueprint com `render.yaml`. Ele configura serviço Node.js e PostgreSQL Free, instala com `npm ci` e executa `npm start`. A conexão é fornecida por `DATABASE_URL`. Confira os planos antes de confirmar. Com a integração automática habilitada, novos pushes para main iniciam a atualização.
+Para publicar, conectei o repositório ao Render e usei um Blueprint com o arquivo `render.yaml`. Nele, deixei o serviço Node.js e o PostgreSQL no plano Free, a instalação com `npm ci` e a execução com `npm start`. A conexão fica em `DATABASE_URL`. Com a integração automática habilitada, quando envio um commit para main, o Render inicia a atualização.
 
 

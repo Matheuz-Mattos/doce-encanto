@@ -2,7 +2,7 @@
 
 ## Objetivo e metodologia
 
-Dar continuidade à proposta da PIT I: uma loja de cupcakes com vendas on-line, pedidos e entrega. A solução foi desenvolvida incrementalmente, com histórias de usuário, backlog, commits em português e revisão da interface após testes.
+Meu objetivo foi dar continuidade à proposta da PIT I: uma loja de cupcakes com vendas on-line, pedidos e entrega. Fui montando o projeto por etapas, usando histórias de usuário, backlog e commits em português. Conforme testava, fui ajustando a interface.
 
 ## Histórias de usuário
 
@@ -20,11 +20,11 @@ Dar continuidade à proposta da PIT I: uma loja de cupcakes com vendas on-line, 
 
 ## Backlog final
 
-Preparação e GitHub; catálogo; carrinho; entrega e pagamento; servidor e PostgreSQL; publicação; histórico e ajustes visuais: implementados. Registros de qualidade: disponíveis no relatório de verificação interna. Word e vídeos: preenchimento e gravação pelo aluno.
+Primeiro organizei a pasta e o GitHub. Depois fiz o catálogo, carrinho, formulário de entrega e pagamento, servidor e banco. Em seguida, publiquei o site e acrescentei o histórico e os ajustes visuais. Também organizei os registros de qualidade. O preenchimento do Word e a gravação dos vídeos ficam comigo.
 
 ## Arquitetura
 
-HTML estrutura as páginas, CSS define aparência e responsividade e JavaScript controla a interface. Node.js e Express recebem requisições, validam dados e consultam PostgreSQL. GitHub guarda o código; Render hospeda servidor e banco. VS Code é o editor utilizado.
+Usei HTML para estruturar as páginas, CSS para a aparência e adaptação ao celular e JavaScript para as interações. No back-end, coloquei Node.js e Express para receber os dados, validar e consultar o PostgreSQL. Trabalhei no VS Code, guardei o código no GitHub e publiquei no Render.
 
 | Interface | Função |
 | --- | --- |
@@ -42,18 +42,18 @@ Respostas principais: 201 para criação, 400 para entrada inválida, 404 para p
 | pedidos | ID, token único, nome, e-mail, telefone, endereço, pagamento, status, total, data |
 | itens_pedido | ID, pedido, produto, nome e preço preservados, quantidade |
 
-Um pedido possui vários itens; cada item referencia um produto. As consultas SQL usam parâmetros. O servidor consulta os preços no banco e calcula em centavos, ignorando preços recebidos do navegador. A transação garante que pedido e itens sejam salvos juntos. Produtos inativos não podem ser comprados; nomes e preços históricos são preservados.
+Organizei o banco para cada pedido ter vários itens, ligados aos produtos. Usei consultas SQL com parâmetros. Deixei o servidor buscar os preços no banco e calcular em centavos, sem confiar no preço enviado pelo navegador. Também usei uma transação para salvar pedido e itens juntos. Mantive o nome e o preço de cada item no histórico, mesmo se o catálogo mudar depois.
 
 ## Manual do cliente
 
-Escolha os sabores, abra Carrinho, revise quantidades, preencha contatos e endereço, selecione pagamento na entrega e confirme. Guarde o link privado. Meus pedidos reúne compras deste navegador. Em outro aparelho, abra o link de cada pedido.
+Montei o fluxo assim: o cliente escolhe os sabores, abre o carrinho, confere as quantidades e preenche os contatos e o endereço. Depois escolhe como pagar na entrega e confirma. Coloquei um link privado para consultar o pedido e a página Meus pedidos para reunir as compras deste navegador. Em outro aparelho, é preciso abrir o link de cada pedido.
 
 ## Limites e melhorias futuras
 
-Não há login, painel administrativo, cobrança on-line ou disparo automático de e-mail/WhatsApp. O status permanece Em preparação. O histórico é local ao navegador; os pedidos permanecem no banco. Quem possui o link privado pode consultar o pedido. O catálogo visual ainda está definido no JavaScript, enquanto os preços de compra vêm do banco.
+Nesta versão, não implementei login, painel administrativo, cobrança on-line ou mensagens automáticas de e-mail/WhatsApp. Deixei o status em Em preparação e o histórico vinculado ao navegador, com os pedidos salvos no banco. Quem tiver o link privado consegue consultar o pedido. Mantive o catálogo visual no JavaScript e os preços usados na compra no banco.
 
-Melhorias futuras: catálogo carregado pela API, autenticação, gestão protegida de pedidos, atualização de status e notificações. Essas funções não estão implementadas.
+Como próximos passos, posso carregar o catálogo pela API e acrescentar autenticação, gestão dos pedidos, atualização de status e notificações. Essas funções ainda não foram implementadas.
 
 ## Qualidade
 
-Consulte [os cinco registros internos](testes-e-correcoes.md) e o [laudo de qualidade](laudo-de-qualidade.md). Execute `npm test` para os sete testes automatizados.
+Organizei os resultados nos [cinco registros internos](testes-e-correcoes.md) e no [laudo de qualidade](laudo-de-qualidade.md). Os sete testes automatizados podem ser executados com `npm test`.

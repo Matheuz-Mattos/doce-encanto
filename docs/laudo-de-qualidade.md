@@ -7,11 +7,11 @@
 
 ## Objetivo
 
-Verificar o funcionamento do fluxo de compra e registrar as correções realizadas para melhorar a utilização do sistema.
+Eu fiz esta avaliação para conferir o fluxo de compra e registrar o que precisei corrigir para deixar o sistema mais fácil de usar.
 
 ## Procedimentos
 
-Foram realizadas verificações internas do catálogo, carrinho, formulário, confirmação, consulta de pedidos e navegação responsiva. Também foram executados sete testes automatizados de validação. O responsável pelo projeto informou ter concluído o fluxo final com sucesso.
+Conferi o catálogo, carrinho, formulário, confirmação e consulta de pedidos. Também verifiquei como a página se adapta ao celular. Foram executados sete testes automatizados de validação, e eu testei o fluxo final de compra com sucesso.
 
 ## Problemas encontrados e correções
 
@@ -25,19 +25,19 @@ Foram realizadas verificações internas do catálogo, carrinho, formulário, co
 
 ## Resultados técnicos
 
-A aplicação publicada respondeu às consultas das páginas de catálogo, carrinho e pedidos. O banco retornou três produtos ativos e preservou um pedido anterior. O registro de pedidos, a consulta por link privado, o cálculo do total no servidor e as respostas a dados inválidos e pedido inexistente foram verificados. Os sete testes automatizados de validação passaram sem falhas.
+Na versão publicada, consegui abrir o catálogo, o carrinho e os pedidos. O banco retornou os três produtos e manteve um pedido anterior salvo. Também foram conferidos o registro de pedidos, a consulta pelo link privado, o cálculo do total no servidor e as mensagens para dados inválidos ou pedido inexistente. Os sete testes automatizados passaram sem falhas.
 
 ## Limites verificados
 
-O status permanece Em preparação conforme o escopo definido. E-mail e WhatsApp são armazenados, mas não há envio automático de mensagens. O histórico depende deste navegador; o link privado permite consultar o pedido em outro aparelho. Não foi registrada uma verificação controlada após reinício manual do serviço ou uma avaliação exaustiva de navegadores.
+Deixei o status em Em preparação, como defini para esta versão. Salvei e-mail e WhatsApp, mas não implementei mensagens automáticas. O histórico fica neste navegador e o link privado permite consultar em outro aparelho. Não fiz uma verificação controlada após reiniciar o serviço manualmente, nem testei todos os navegadores existentes.
 
 ## Conclusão
 
-As correções melhoraram o fluxo de escolha, fechamento e consulta de pedidos. A versão atende ao escopo implementado de catálogo, carrinho, pagamento na entrega e registro persistente de pedidos. Os resultados apresentados correspondem às verificações internas registradas, respeitando os limites descritos.
+Com os ajustes, deixei a escolha dos produtos, o fechamento da compra e a consulta de pedidos mais organizados. Consegui colocar no ar o fluxo que planejei: catálogo, carrinho, pagamento na entrega e pedidos salvos no banco. Registrei aqui o que foi verificado e o que ainda não faz parte desta versão.
 
 ## Evidências da versão final
 
-Capturas realizadas no site publicado em 29/10/2026 (Brasília), com dados de teste. Documentam a versão final após as correções; não são imagens do estado anterior.
+Separei abaixo as capturas do site publicado, feitas em 29/10/2026 (Brasília), usando dados de teste. Elas mostram como ficou a versão final depois das correções.
 
 ### Catálogo, menu e rodapé
 
