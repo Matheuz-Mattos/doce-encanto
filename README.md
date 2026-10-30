@@ -65,8 +65,3 @@ Os cinco registros consolidam as verificações internas e as correções do pro
 No Render, conecte este repositório e crie um Blueprint com `render.yaml`. Ele configura serviço Node.js e PostgreSQL Free, instala com `npm ci` e executa `npm start`. A conexão é fornecida por `DATABASE_URL`. Confira os planos antes de confirmar. Com a integração automática habilitada, novos pushes para main iniciam a atualização.
 
 
-## Limites desta versão
-
-Não há login, painel administrativo, cobrança on-line ou envio automático de e-mail/WhatsApp. O status permanece Em preparação. O catálogo visual está no JavaScript; os preços usados para registrar pedidos vêm do banco.
-
-O histórico local pode ser perdido ao limpar os dados do navegador, mas os pedidos permanecem no banco e podem ser consultados pelo link privado. Quem tem esse link pode ler os dados do pedido. Evite inserir informações pessoais sensíveis durante testes.
