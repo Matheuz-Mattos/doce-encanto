@@ -19,7 +19,7 @@ for (const produto of lista ? produtos : []) {
 
   const imagem = document.createElement('img');
   imagem.src = `imagens/${produto.imagem}`;
-  imagem.alt = `Imagem ilustrativa do cupcake ${produto.nome.toLowerCase()}`;
+  imagem.alt = `Cupcake ${produto.nome.toLowerCase()}`;
   imagem.loading = 'lazy';
   imagem.width = 400;
   imagem.height = 350;
@@ -56,7 +56,13 @@ function carregarCarrinho() {
   } catch { return {}; }
 }
 
-function avisar(texto) { document.querySelector('#mensagem').textContent = texto; }
+let tempoMensagem;
+function avisar(texto) {
+  const mensagem = document.querySelector('#mensagem');
+  mensagem.textContent = texto;
+  clearTimeout(tempoMensagem);
+  tempoMensagem = setTimeout(() => { mensagem.textContent = ''; }, 4000);
+}
 
 function salvarCarrinho() {
   try { localStorage.setItem('doce-encanto-carrinho', JSON.stringify(carrinho)); }
@@ -70,7 +76,6 @@ function adicionarProduto(id) {
   carrinho[id] = atual + 1;
   avisar(`${produtos.find(produto => produto.id === id).nome} adicionado ao carrinho.`);
   salvarCarrinho();
-  if (Object.hasOwn(carrinho, id)) location.href = 'carrinho.html';
 }
 
 function mostrarCarrinho() {

@@ -71,6 +71,19 @@ footer p { font-size: 12px; margin: 7px 0 0; color: var(--texto); }
 /* Compra em página própria: resumo à esquerda e entrega à direita. */
 [hidden] { display: none !important; }
 .sacola { display: flex; gap: 8px; align-items: center; text-decoration: none; font-size: 14px; }
+.cabecalho { border-bottom: 1px solid #ecdce1; }
+.menu-loja { display: flex; align-items: center; gap: 28px; }
+.menu-loja > a { text-decoration: none; font-size: 14px; }
+.menu-loja > a:hover { color: var(--rosa); }
+.menu-loja .sacola { padding: 10px 15px; border: 1px solid #e6c7d2; border-radius: 8px; }
+.icone { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+#mensagem:not(:empty) { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 10; background: var(--chocolate); color: white; border-radius: 10px; padding: 14px 22px; width: max-content; max-width: calc(100% - 32px); box-shadow: 0 5px 20px #3d242a22; }
+.rodape-loja { text-align: left; margin-top: 30px; padding: 45px 30px 20px; }
+.rodape-conteudo { max-width: 1120px; margin: auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 35px; }
+.rodape-conteudo nav { display: flex; flex-direction: column; gap: 10px; }
+.rodape-conteudo nav a { font-size: 14px; text-decoration: none; }
+.rodape-conteudo .rodape-titulo { font: bold 14px Arial, sans-serif; }
+.rodape-loja .direitos { max-width: 1120px; margin: 30px auto 0; padding-top: 18px; border-top: 1px solid #e6c7d2; }
 .contador { border-radius: 50%; background: var(--rosa); color: white; min-width: 25px; text-align: center; padding: 2px 6px; }
 .checkout { max-width: 1180px; margin: auto; padding: 24px 30px 70px; }
 .checkout h1 { font-size: 38px; margin-top: 28px; }
@@ -88,7 +101,9 @@ footer p { font-size: 12px; margin: 7px 0 0; color: var(--texto); }
 .pagamentos { border: 0; padding: 0; display: flex; gap: 10px; margin: 25px 0; }
 .pagamentos legend { margin-bottom: 12px; }
 #formulario-pedido .pagamentos label { flex: 1; margin: 0; cursor: pointer; }
-#formulario-pedido .pagamentos input { width: auto; display: inline-block; margin: 0 0 8px; accent-color: var(--rosa); }
+#formulario-pedido .pagamentos label { position: relative; }
+#formulario-pedido .pagamentos input { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; opacity: 0; }
+.pagamentos input:focus-visible + span { outline: 3px solid var(--rosa); outline-offset: 4px; }
 .pagamentos span { display: block; border: 1px solid #ecdce1; border-radius: 9px; padding: 10px; text-align: center; }
 .pagamentos input:checked + span { border: 2px solid var(--rosa); padding: 9px; background: var(--rosa-claro); color: var(--rosa); }
 .confirmar { width: 100%; font-weight: bold; }
@@ -103,6 +118,11 @@ footer p { font-size: 12px; margin: 7px 0 0; color: var(--texto); }
   .checkout-grade { grid-template-columns: 1fr; }
   .painel { padding: 20px; }
   .etapas { gap: 16px; font-size: 12px; }
+  .menu-loja { gap: 12px; }
+  .menu-loja > a { font-size: 12px; }
+  .menu-loja > a:first-child { display: none; }
+  .menu-loja .sacola { padding: 8px; gap: 5px; }
+  .rodape-conteudo { grid-template-columns: 1fr; gap: 24px; }
   .item-carrinho strong { flex-basis: 130px; }
   #consulta-pedido { padding: 24px 18px; }
 }

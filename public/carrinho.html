@@ -10,7 +10,7 @@
 <body>
   <header class="cabecalho">
     <a class="marca" href="index.html">Doce Encanto<span>Cupcakes artesanais</span></a>
-    <a class="sacola" href="carrinho.html"><span aria-hidden="true">🛒</span> Carrinho <span class="contador">0</span></a>
+    <nav class="menu-loja" aria-label="Menu principal"><a href="index.html">Início</a><a href="index.html#cardapio">Cardápio</a><a class="sacola" href="carrinho.html" aria-label="Abrir carrinho"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l3 12h11l2-8H6M9 20h.01M18 20h.01"/></svg> Carrinho <span class="contador">0</span></a></nav>
   </header>
   <main class="checkout" id="checkout">
     <a class="voltar" href="index.html#cardapio">← Continuar comprando</a>
@@ -35,13 +35,12 @@
             <label><input type="radio" name="pagamento" value="dinheiro"><span>＄<br>Dinheiro</span></label>
           </fieldset>
           <button class="botao confirmar" type="submit">Confirmar pedido ✓</button>
-          <small class="nota">Projeto demonstrativo • Nenhuma cobrança real</small>
           <p id="retorno-pedido" role="status" aria-live="polite"></p>
         </form>
       </section>
     </div>
     <section id="consulta-pedido" hidden aria-label="Confirmação do pedido" tabindex="-1"></section>
   </main>
-  <footer><strong>Doce Encanto</strong><p>Feito para deixar seu dia mais doce.</p></footer>
+  <footer class="rodape-loja"><div class="rodape-conteudo"><div><strong>Doce Encanto</strong><p>Cupcakes artesanais para os seus melhores momentos.</p></div><nav aria-label="Menu do rodapé"><a href="index.html#cardapio">Nosso cardápio</a><a href="carrinho.html">Meu carrinho</a></nav><div><strong class="rodape-titulo">Pagamento na entrega</strong><p>Pix · Cartão · Dinheiro</p></div></div><p class="direitos">© Doce Encanto. Todos os direitos reservados.</p></footer>
 </body>
 </html>
