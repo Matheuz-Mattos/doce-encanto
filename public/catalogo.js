@@ -150,7 +150,7 @@ document.querySelector('#formulario-pedido')?.addEventListener('submit', async e
   try {
     const resposta = await fetch('/api/pedidos', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome: campos.get('nome'), endereco: campos.get('endereco'), pagamento: campos.get('pagamento'), itens: Object.entries(carrinho).map(([id, quantidade]) => ({ id: Number(id), quantidade })) })
+      body: JSON.stringify({ nome: campos.get('nome'), email: campos.get('email'), telefone: campos.get('telefone'), endereco: campos.get('endereco'), pagamento: campos.get('pagamento'), itens: Object.entries(carrinho).map(([id, quantidade]) => ({ id: Number(id), quantidade })) })
     });
     const dados = await resposta.json();
     if (!resposta.ok) throw new Error(dados.erro || 'Não foi possível salvar o pedido.');
@@ -178,6 +178,10 @@ async function consultarPedido() {
     const mensagem = document.createElement('p'); mensagem.textContent = 'Tudo certo! Agora é só aguardar o preparo e a entrega dos seus cupcakes.'; area.append(mensagem);
     const etapas = document.createElement('p'); etapas.className = 'etapas-confirmacao'; etapas.textContent = '✓ Recebido   ›   🧁 Preparo   ›   🛵 Entrega'; area.append(etapas);
     const status = document.createElement('p'); status.textContent = `Status: ${pedido.status} · Pagamento na entrega`; area.append(status);
+    const contato = document.createElement('p'); contato.className = 'lembrete-contato'; contato.textContent = '✉ Fique de olho no e-mail e no WhatsApp informados para acompanhar possíveis atualizações sobre a saída para entrega.'; area.append(contato);
+    if (pedido.email && pedido.telefone) {
+      const dadosContato = document.createElement('p'); dadosContato.textContent = `${pedido.email} · ${pedido.telefone}`; area.append(dadosContato);
+    }
     for (const texto of [`Cliente: ${pedido.nome}`, `📍 ${pedido.endereco}`, ...pedido.itens.map(item => `${item.quantidade} × ${item.nome}: ${moeda.format(item.quantidade * item.preco_centavos / 100)}`), `Total: ${moeda.format(pedido.total_centavos / 100)}`]) {
       const p = document.createElement('p'); p.textContent = texto; area.append(p);
     }

@@ -33,7 +33,7 @@ app.post('/api/pedidos', async (req, res, next) => {
     const itens = dados.itens.map(item => ({ ...produtos.find(p => p.id === item.id), quantidade: item.quantidade }));
     const total = itens.reduce((soma, item) => soma + item.preco_centavos * item.quantidade, 0);
     const token = randomUUID();
-    const pedido = (await conexao.query('INSERT INTO pedidos (token,nome,endereco,pagamento,total_centavos) VALUES ($1,$2,$3,$4,$5) RETURNING id', [token,dados.nome,dados.endereco,dados.pagamento,total])).rows[0];
+    const pedido = (await conexao.query('INSERT INTO pedidos (token,nome,endereco,pagamento,total_centavos,email,telefone) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id', [token,dados.nome,dados.endereco,dados.pagamento,total,dados.email,dados.telefone])).rows[0];
     for (const item of itens) {
       await conexao.query('INSERT INTO itens_pedido (pedido_id,produto_id,nome,preco_centavos,quantidade) VALUES ($1,$2,$3,$4,$5)', [pedido.id,item.id,item.nome,item.preco_centavos,item.quantidade]);
     }

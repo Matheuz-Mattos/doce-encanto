@@ -1,7 +1,9 @@
 // Validação independente do navegador: o servidor nunca confia no preço recebido.
 function validarPedido(dados) {
   if (!dados || typeof dados !== 'object') throw new Error('Dados do pedido inválidos.');
-  const { nome, endereco, pagamento, itens } = dados;
+  const { nome, email, telefone, endereco, pagamento, itens } = dados;
+  if (typeof email !== 'string' || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) throw new Error('Informe um e-mail válido.');
+  if (typeof telefone !== 'string' || telefone.length > 25 || !/^[0-9+() .-]+$/.test(telefone) || !/^(?:55)?[1-9][0-9][0-9]{8,9}$/.test(telefone.replace(/\D/g, ''))) throw new Error('Informe um telefone válido com DDD.');
   if (typeof nome !== 'string' || nome.trim().length < 3 || nome.length > 100) throw new Error('Informe seu nome com 3 a 100 caracteres.');
   if (typeof endereco !== 'string' || endereco.trim().length < 10 || endereco.length > 400) throw new Error('Informe o endereço completo com 10 a 400 caracteres.');
   if (!['pix', 'cartao', 'dinheiro'].includes(pagamento)) throw new Error('Escolha uma forma de pagamento válida.');
@@ -12,6 +14,6 @@ function validarPedido(dados) {
     if (!Number.isInteger(item.quantidade) || item.quantidade < 1 || item.quantidade > 20) throw new Error('A quantidade deve ser de 1 a 20.');
     ids.add(item.id);
   }
-  return { nome: nome.trim(), endereco: endereco.trim(), pagamento, itens };
+  return { nome: nome.trim(), email: email.trim().toLowerCase(), telefone: telefone.replace(/\D/g, ''), endereco: endereco.trim(), pagamento, itens };
 }
 module.exports = { validarPedido };

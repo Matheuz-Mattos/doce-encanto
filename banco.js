@@ -19,6 +19,8 @@ async function prepararBanco() {
       produto_id INTEGER NOT NULL REFERENCES produtos(id), nome TEXT NOT NULL,
       preco_centavos INTEGER NOT NULL, quantidade INTEGER NOT NULL CHECK (quantidade BETWEEN 1 AND 20)
     );
+    ALTER TABLE pedidos ADD COLUMN IF NOT EXISTS email TEXT;
+    ALTER TABLE pedidos ADD COLUMN IF NOT EXISTS telefone TEXT;
   `);
   for (const p of produtos) {
     await banco.query('INSERT INTO produtos (id,nome,descricao,preco_centavos,imagem) VALUES ($1,$2,$3,$4,$5) ON CONFLICT (id) DO NOTHING', [p.id,p.nome,p.descricao,p.preco_centavos,p.imagem]);

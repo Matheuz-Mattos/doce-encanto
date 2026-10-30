@@ -28,6 +28,8 @@
         <h2 id="titulo-entrega">📍 Onde vamos entregar?</h2>
         <form id="formulario-pedido">
           <label>Seu nome<input name="nome" required minlength="3" maxlength="100" autocomplete="name" placeholder="Nome completo"></label>
+          <label>E-mail<input type="email" name="email" required maxlength="254" autocomplete="email" placeholder="voce@exemplo.com"></label>
+          <label>Telefone / WhatsApp<input type="tel" name="telefone" required maxlength="25" autocomplete="tel" placeholder="(11) 99999-9999" inputmode="tel" pattern="[0-9+() .\-]{10,25}" title="Informe o DDD e o número do telefone."></label>
           <label>Endereço de entrega<textarea name="endereco" required minlength="10" maxlength="400" autocomplete="street-address" placeholder="Rua, número, bairro, cidade, estado e CEP"></textarea></label>
           <fieldset class="pagamentos"><legend>💳 Pague na entrega</legend>
             <label><input type="radio" name="pagamento" value="pix" required checked><span>◇<br>Pix</span></label>
