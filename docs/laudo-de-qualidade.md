@@ -35,7 +35,31 @@ O status permanece Em preparação conforme o escopo definido. E-mail e WhatsApp
 
 As correções melhoraram o fluxo de escolha, fechamento e consulta de pedidos. A versão atende ao escopo implementado de catálogo, carrinho, pagamento na entrega e registro persistente de pedidos. Os resultados apresentados correspondem às verificações internas registradas, respeitando os limites descritos.
 
-## Evidências para anexar ao documento da faculdade
+## Evidências da versão final
+
+Capturas realizadas no site publicado em 29/10/2026 (Brasília), com dados de teste. Documentam a versão final após as correções; não são imagens do estado anterior.
+
+### Catálogo, menu e rodapé
+
+![Catálogo com três sabores, menu e rodapé](imagens/01-catalogo.png)
+
+### Carrinho com fotos e resumo
+
+![Carrinho com miniatura, quantidade e valor total](imagens/02-carrinho.png)
+
+### Contatos, endereço e pagamento
+
+![Formulário de entrega e pagamento preenchido com dados de teste](imagens/03-entrega.png)
+
+### Confirmação e etapas de acompanhamento
+
+![Pedido confirmado com etapa Em preparação ativa](imagens/04-confirmacao.png)
+
+### Histórico de pedidos
+
+![Página Meus pedidos com acesso ao acompanhamento](imagens/05-historico.png)
+
+## Evidências para o documento da faculdade
 
 1. Captura do catálogo com três sabores e menu.
 2. Captura do carrinho com fotos e total.
@@ -43,4 +67,4 @@ As correções melhoraram o fluxo de escolha, fechamento e consulta de pedidos. 
 4. Captura da confirmação e de Meus pedidos.
 5. Captura do terminal executando `npm test`.
 
-O histórico de commits no GitHub também permite consultar as alterações relacionadas a cada correção. As capturas devem ser anexadas pelo responsável ao documento da entrega; este laudo não declara que já estão anexadas.
+O histórico de commits no GitHub também permite consultar as alterações relacionadas a cada correção. As capturas acima estão disponíveis na pasta docs/imagens e podem ser inseridas no Word. A imagem do terminal executando os testes pode ser acrescentada pelo responsável.

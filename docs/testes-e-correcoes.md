@@ -6,6 +6,8 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Identificação:** QA-01 — Catálogo
 
+**Cronograma de referência:** 29/09/2026
+
 **Data:** 29/10/2026
 
 **O que testou e funcionou:** Visualização dos cupcakes, fotos, descrições e preços; inclusão de produtos no carrinho.
@@ -17,6 +19,8 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 ## 2. Carrinho
 
 **Identificação:** QA-02 — Carrinho
+
+**Cronograma de referência:** 09/10/2026
 
 **Data:** 29/10/2026
 
@@ -30,6 +34,8 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Identificação:** QA-03 — Entrega e pagamento
 
+**Cronograma de referência:** 13/10/2026
+
 **Data:** 29/10/2026
 
 **O que testou e funcionou:** Nome, endereço e escolha entre Pix, cartão e dinheiro, com pagamento na entrega.
@@ -42,6 +48,8 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 
 **Identificação:** QA-04 — Confirmação e acompanhamento
 
+**Cronograma de referência:** 23/10/2026
+
 **Data:** 29/10/2026
 
 **O que testou e funcionou:** Registro no banco, cálculo de total pelo servidor e consulta pelo link privado.
@@ -53,6 +61,8 @@ Registros de verificação interna que consolidam as mudanças e verificações 
 ## 5. Navegação e apresentação
 
 **Identificação:** QA-05 — Navegação e apresentação
+
+**Cronograma de referência:** 28/10/2026
 
 **Data:** 29/10/2026
 
