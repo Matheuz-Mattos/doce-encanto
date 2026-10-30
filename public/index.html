@@ -13,7 +13,7 @@
   <a class="pular" href="#cardapio">Pular para o cardápio</a>
   <header class="cabecalho">
     <a class="marca" href="index.html">Doce Encanto<span>Cupcakes artesanais</span></a>
-    <a class="link-cardapio" href="#cardapio">Ver cardápio</a>
+    <a class="sacola" href="carrinho.html" aria-label="Abrir carrinho"><span aria-hidden="true">🛒</span> Carrinho <span class="contador">0</span></a>
   </header>
 
   <main>
@@ -34,22 +34,6 @@
       <p id="mensagem" role="status" aria-live="polite"></p>
       <noscript><p>Ative o JavaScript do navegador para visualizar os produtos.</p></noscript>
       <p class="aviso">As imagens são ilustrativas. Pedidos e pagamentos são demonstrativos.</p>
-    </section>
-    <section class="cardapio carrinho" aria-labelledby="titulo-carrinho">
-      <h2 id="titulo-carrinho">Seu carrinho</h2>
-      <div id="itens-carrinho"></div>
-      <p class="total">Total: <strong id="total-carrinho">R$ 0,00</strong></p>
-      <p class="aviso">Você pode escolher de 1 a 20 unidades de cada sabor.</p>
-      <h2>Entrega e pagamento</h2>
-      <form id="formulario-pedido">
-        <label>Nome completo<input name="nome" required minlength="3" maxlength="100" autocomplete="name"></label>
-        <label>Endereço completo<textarea name="endereco" required minlength="10" maxlength="400" autocomplete="street-address" placeholder="Rua, número, bairro, cidade, estado e CEP"></textarea></label>
-        <label>Pagamento demonstrativo<select name="pagamento" required><option value="">Selecione</option><option value="pix">Pix simulado</option><option value="cartao">Cartão na entrega</option><option value="dinheiro">Dinheiro</option></select></label>
-        <p>Nenhuma cobrança será realizada. Use dados fictícios para testar.</p>
-        <button class="botao" type="submit">Confirmar pedido demonstrativo</button>
-        <p id="retorno-pedido" role="status" aria-live="polite"></p>
-      </form>
-      <section id="consulta-pedido" hidden aria-label="Confirmação do pedido"></section>
     </section>
   </main>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu carrinho | Doce Encanto</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="catalogo.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <a class="marca" href="index.html">Doce Encanto<span>Cupcakes artesanais</span></a>
+    <a class="sacola" href="carrinho.html"><span aria-hidden="true">🛒</span> Carrinho <span class="contador">0</span></a>
+  </header>
+  <main class="checkout" id="checkout">
+    <a class="voltar" href="index.html#cardapio">← Continuar comprando</a>
+    <h1>Falta pouco para adoçar seu dia.</h1>
+    <div class="etapas" aria-label="Etapas da compra"><span>🛒 Carrinho</span><span>📍 Entrega</span><span>✓ Confirmação</span></div>
+    <p id="mensagem" role="status" aria-live="polite"></p>
+    <div class="checkout-grade" id="compra">
+      <section class="painel" aria-labelledby="titulo-carrinho">
+        <h2 id="titulo-carrinho">🧁 Seu pedido</h2>
+        <div id="itens-carrinho"></div>
+        <div class="resumo"><span>Entrega</span><strong>Grátis</strong></div>
+        <div class="resumo total"><span>Total</span><strong id="total-carrinho">R$ 0,00</strong></div>
+      </section>
+      <section class="painel" aria-labelledby="titulo-entrega">
+        <h2 id="titulo-entrega">📍 Onde vamos entregar?</h2>
+        <form id="formulario-pedido">
+          <label>Seu nome<input name="nome" required minlength="3" maxlength="100" autocomplete="name" placeholder="Nome completo"></label>
+          <label>Endereço de entrega<textarea name="endereco" required minlength="10" maxlength="400" autocomplete="street-address" placeholder="Rua, número, bairro, cidade, estado e CEP"></textarea></label>
+          <fieldset class="pagamentos"><legend>💳 Pague na entrega</legend>
+            <label><input type="radio" name="pagamento" value="pix" required checked><span>◇<br>Pix</span></label>
+            <label><input type="radio" name="pagamento" value="cartao"><span>▣<br>Cartão</span></label>
+            <label><input type="radio" name="pagamento" value="dinheiro"><span>＄<br>Dinheiro</span></label>
+          </fieldset>
+          <button class="botao confirmar" type="submit">Confirmar pedido ✓</button>
+          <small class="nota">Projeto demonstrativo • Nenhuma cobrança real</small>
+          <p id="retorno-pedido" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+    <section id="consulta-pedido" hidden aria-label="Confirmação do pedido" tabindex="-1"></section>
+  </main>
+  <footer><strong>Doce Encanto</strong><p>Feito para deixar seu dia mais doce.</p></footer>
+</body>
+</html>

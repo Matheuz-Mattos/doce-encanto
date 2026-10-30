@@ -13,7 +13,7 @@ const moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL
 const lista = document.querySelector('#lista-produtos');
 
 // Cada objeto do catálogo se transforma em um cartão na página.
-for (const produto of produtos) {
+for (const produto of lista ? produtos : []) {
   const cartao = document.createElement('article');
   cartao.className = 'produto';
 
@@ -35,7 +35,7 @@ for (const produto of produtos) {
   const adicionar = document.createElement('button');
   adicionar.type = 'button';
   adicionar.className = 'botao adicionar';
-  adicionar.textContent = 'Adicionar ao carrinho';
+  adicionar.textContent = '＋ Adicionar';
   adicionar.addEventListener('click', () => adicionarProduto(produto.id));
   cartao.append(imagem, nome, descricao, preco, adicionar);
   lista.append(cartao);
@@ -70,10 +70,13 @@ function adicionarProduto(id) {
   carrinho[id] = atual + 1;
   avisar(`${produtos.find(produto => produto.id === id).nome} adicionado ao carrinho.`);
   salvarCarrinho();
+  if (Object.hasOwn(carrinho, id)) location.href = 'carrinho.html';
 }
 
 function mostrarCarrinho() {
   const listaCarrinho = document.querySelector('#itens-carrinho');
+  document.querySelectorAll('.contador').forEach(contador => { contador.textContent = Object.values(carrinho).reduce((soma, quantidade) => soma + quantidade, 0); });
+  if (!listaCarrinho) return;
   listaCarrinho.replaceChildren();
   let totalCentavos = 0;
 
@@ -112,7 +115,10 @@ function mostrarCarrinho() {
     remover.addEventListener('click', () => {
       delete carrinho[produto.id]; avisar('Produto removido.'); salvarCarrinho();
     });
-    linha.append(nome, rotulo, valor, remover);
+    const foto = document.createElement('img');
+    foto.src = `imagens/${produto.imagem}`; foto.alt = produto.nome;
+    foto.className = 'miniatura'; foto.width = 76; foto.height = 76;
+    linha.append(foto, nome, rotulo, valor, remover);
     listaCarrinho.append(linha);
   }
   if (!listaCarrinho.children.length) {
@@ -121,12 +127,14 @@ function mostrarCarrinho() {
     listaCarrinho.append(vazio);
   }
   document.querySelector('#total-carrinho').textContent = moeda.format(totalCentavos / 100);
+  const confirmar = document.querySelector('.confirmar');
+  if (confirmar) confirmar.disabled = !Object.keys(carrinho).length;
 }
 
 mostrarCarrinho();
 
 // Enviamos somente os IDs e as quantidades. O servidor determina o preço final.
-document.querySelector('#formulario-pedido').addEventListener('submit', async evento => {
+document.querySelector('#formulario-pedido')?.addEventListener('submit', async evento => {
   evento.preventDefault();
   const formulario = evento.currentTarget;
   const retorno = document.querySelector('#retorno-pedido');
@@ -145,27 +153,35 @@ document.querySelector('#formulario-pedido').addEventListener('submit', async ev
     retorno.textContent = 'Pedido salvo! Guarde o link abaixo para consultar.';
     location.hash = `pedido=${dados.token}`;
   } catch (erro) { retorno.textContent = erro instanceof SyntaxError ? 'O servidor de pedidos ainda não está conectado.' : erro.message; }
-  finally { botao.disabled = false; }
+  finally { botao.disabled = !Object.keys(carrinho).length; }
 });
 
 async function consultarPedido() {
   if (!location.hash.startsWith('#pedido=')) return;
   const token = location.hash.slice(8);
   const area = document.querySelector('#consulta-pedido');
+  if (!area) { location.replace(`carrinho.html${location.hash}`); return; }
   area.hidden = false; area.textContent = 'Consultando pedido...';
   try {
     const resposta = await fetch(`/api/pedidos/${encodeURIComponent(token)}`);
     const pedido = await resposta.json();
     if (!resposta.ok) throw new Error(pedido.erro);
     area.replaceChildren();
-    const titulo = document.createElement('h2'); titulo.textContent = `Pedido ${pedido.status}`; area.append(titulo);
-    for (const texto of [`Cliente: ${pedido.nome}`, `Entrega: ${pedido.endereco}`, ...pedido.itens.map(item => `${item.quantidade} × ${item.nome}: ${moeda.format(item.quantidade * item.preco_centavos / 100)}`), `Total: ${moeda.format(pedido.total_centavos / 100)}`]) {
+    document.querySelector('#compra').hidden = true;
+    const selo = document.createElement('div'); selo.className = 'sucesso'; selo.textContent = '✓'; area.append(selo);
+    const titulo = document.createElement('h2'); titulo.textContent = 'Seu pedido chegou à nossa cozinha!'; area.append(titulo);
+    const mensagem = document.createElement('p'); mensagem.textContent = 'Tudo certo! Agora é só aguardar o preparo e a entrega dos seus cupcakes.'; area.append(mensagem);
+    const etapas = document.createElement('p'); etapas.className = 'etapas-confirmacao'; etapas.textContent = '✓ Recebido   ›   🧁 Preparo   ›   🛵 Entrega'; area.append(etapas);
+    const status = document.createElement('p'); status.textContent = `Status: ${pedido.status} · Pagamento na entrega`; area.append(status);
+    for (const texto of [`Cliente: ${pedido.nome}`, `📍 ${pedido.endereco}`, ...pedido.itens.map(item => `${item.quantidade} × ${item.nome}: ${moeda.format(item.quantidade * item.preco_centavos / 100)}`), `Total: ${moeda.format(pedido.total_centavos / 100)}`]) {
       const p = document.createElement('p'); p.textContent = texto; area.append(p);
     }
     const link = document.createElement('a'); link.href = location.href; link.textContent = 'Link privado deste pedido (copie e guarde)'; area.append(link);
     const aviso = document.createElement('p'); aviso.textContent = 'Quem tiver este link poderá consultar os dados do pedido.'; area.append(aviso);
+    const voltar = document.createElement('a'); voltar.className = 'botao'; voltar.href = 'index.html'; voltar.textContent = 'Voltar ao cardápio'; area.append(voltar);
   } catch (erro) { area.textContent = erro.message; }
   area.scrollIntoView({ block: 'start' });
+  area.focus();
 }
 window.addEventListener('hashchange', consultarPedido);
 consultarPedido();
