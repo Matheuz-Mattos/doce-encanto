@@ -154,6 +154,7 @@ document.querySelector('#formulario-pedido')?.addEventListener('submit', async e
     });
     const dados = await resposta.json();
     if (!resposta.ok) throw new Error(dados.erro || 'Não foi possível salvar o pedido.');
+    window.historicoPedidos.salvar(dados.token);
     carrinho = {}; salvarCarrinho(); formulario.reset();
     retorno.textContent = 'Pedido salvo! Guarde o link abaixo para consultar.';
     location.hash = `pedido=${dados.token}`;
@@ -171,6 +172,7 @@ async function consultarPedido() {
     const resposta = await fetch(`/api/pedidos/${encodeURIComponent(token)}`);
     const pedido = await resposta.json();
     if (!resposta.ok) throw new Error(pedido.erro);
+    window.historicoPedidos.salvar(token);
     area.replaceChildren();
     document.querySelector('#compra').hidden = true;
     const selo = document.createElement('div'); selo.className = 'sucesso'; selo.textContent = '✓'; area.append(selo);
@@ -188,6 +190,7 @@ async function consultarPedido() {
     const link = document.createElement('a'); link.href = location.href; link.textContent = 'Link privado deste pedido (copie e guarde)'; area.append(link);
     const aviso = document.createElement('p'); aviso.textContent = 'Quem tiver este link poderá consultar os dados do pedido.'; area.append(aviso);
     const voltar = document.createElement('a'); voltar.className = 'botao'; voltar.href = 'index.html'; voltar.textContent = 'Voltar ao cardápio'; area.append(voltar);
+    const historico = document.createElement('a'); historico.className = 'botao'; historico.href = 'pedidos.html'; historico.textContent = 'Meus pedidos'; area.append(historico);
   } catch (erro) { area.textContent = erro.message; }
   area.scrollIntoView({ block: 'start' });
   area.focus();

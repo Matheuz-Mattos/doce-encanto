@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus pedidos | Doce Encanto</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="pedidos.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <a class="marca" href="index.html">Doce Encanto<span>Cupcakes artesanais</span></a>
+    <nav class="menu-loja" aria-label="Menu principal"><a href="index.html">Início</a><a href="pedidos.html" aria-current="page">Meus pedidos</a><a class="sacola" href="carrinho.html">🛒 Carrinho</a></nav>
+  </header>
+  <main class="checkout">
+    <a class="voltar" href="index.html#cardapio">← Voltar ao cardápio</a>
+    <h1>Meus pedidos</h1>
+    <p class="ajuda-historico">Compras realizadas neste navegador. Guarde o link de cada pedido para consultar em outro aparelho.</p>
+    <div id="lista-pedidos" aria-live="polite"></div>
+  </main>
+  <footer class="rodape-loja"><div class="rodape-conteudo"><div><strong>Doce Encanto</strong><p>Cupcakes artesanais para os seus melhores momentos.</p></div><nav aria-label="Menu do rodapé"><a href="index.html#cardapio">Nosso cardápio</a><a href="carrinho.html">Meu carrinho</a><a href="pedidos.html">Meus pedidos</a></nav><div><strong class="rodape-titulo">Pagamento na entrega</strong><p>Pix · Cartão · Dinheiro</p></div></div><p class="direitos">© Doce Encanto. Todos os direitos reservados.</p></footer>
+</body>
+</html>
