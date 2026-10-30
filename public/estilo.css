@@ -114,8 +114,9 @@ footer p { font-size: 12px; margin: 7px 0 0; color: var(--texto); }
 .etapas-confirmacao { padding: 20px 0; border-block: 1px solid #e4cbd4; }
 .lembrete-contato { background: white; border-radius: 10px; padding: 16px; color: var(--rosa); }
 .ajuda-historico { color: var(--texto); max-width: 650px; }
-.atalho-pedidos { max-width: 1180px; padding: 8px 30px; margin: auto; text-align: right; font-size: 13px; }
-.atalho-pedidos a { color: var(--rosa); text-decoration: none; }
+.linha-status { display: flex; list-style: none; padding: 20px 0; gap: 12px; margin: 24px 0; }
+.linha-status li { flex: 1; color: #74676c; border-top: 4px solid #decdd3; padding-top: 14px; font-size: 14px; }
+.linha-status .ativa { color: var(--rosa); border-color: var(--rosa); font-weight: bold; }
 #lista-pedidos { display: grid; gap: 20px; margin-top: 30px; }
 .pedido-historico { position: relative; }
 .pedido-historico h2 { padding-right: 120px; }
@@ -133,6 +134,8 @@ footer p { font-size: 12px; margin: 7px 0 0; color: var(--texto); }
   .menu-loja { gap: 12px; }
   .menu-loja > a { font-size: 12px; }
   .menu-loja > a:first-child { display: none; }
+  .cabecalho { flex-wrap: wrap; }
+  .menu-loja { flex-wrap: wrap; }
   .menu-loja .sacola { padding: 8px; gap: 5px; }
   .rodape-conteudo { grid-template-columns: 1fr; gap: 24px; }
   .item-carrinho strong { flex-basis: 130px; }

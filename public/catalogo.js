@@ -177,8 +177,14 @@ async function consultarPedido() {
     document.querySelector('#compra').hidden = true;
     const selo = document.createElement('div'); selo.className = 'sucesso'; selo.textContent = '✓'; area.append(selo);
     const titulo = document.createElement('h2'); titulo.textContent = 'Seu pedido chegou à nossa cozinha!'; area.append(titulo);
-    const mensagem = document.createElement('p'); mensagem.textContent = 'Tudo certo! Agora é só aguardar o preparo e a entrega dos seus cupcakes.'; area.append(mensagem);
-    const etapas = document.createElement('p'); etapas.className = 'etapas-confirmacao'; etapas.textContent = '✓ Recebido   ›   🧁 Preparo   ›   🛵 Entrega'; area.append(etapas);
+    const mensagem = document.createElement('p'); mensagem.textContent = 'Estamos preparando seus cupcakes com carinho.'; area.append(mensagem);
+    const etapas = document.createElement('ol'); etapas.className = 'linha-status';
+    for (const [indice, texto] of ['🧁 Em preparação', '🛵 Em rota de entrega', '✓ Entregue'].entries()) {
+      const etapa = document.createElement('li'); etapa.textContent = texto;
+      if (indice === 0) { etapa.className = 'ativa'; etapa.setAttribute('aria-current', 'step'); }
+      etapas.append(etapa);
+    }
+    area.append(etapas);
     const status = document.createElement('p'); status.textContent = `Status: ${pedido.status} · Pagamento na entrega`; area.append(status);
     const contato = document.createElement('p'); contato.className = 'lembrete-contato'; contato.textContent = '✉ Fique de olho no e-mail e no WhatsApp informados para acompanhar possíveis atualizações sobre a saída para entrega.'; area.append(contato);
     if (pedido.email && pedido.telefone) {
