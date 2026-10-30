@@ -7,7 +7,6 @@ Loja de cupcakes com catálogo, carrinho, pedidos e acompanhamento. Autor: **Mat
 ## Documentação para leitura
 
 - [Objetivo, histórias de usuário, arquitetura, banco e manual](docs/documentacao.md)
-- [Cinco registros de verificação interna e correções](docs/testes-e-correcoes.md)
 - [Laudo de qualidade](docs/laudo-de-qualidade.md)
 
 ## Funcionalidades implementadas
