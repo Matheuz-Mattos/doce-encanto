@@ -31,8 +31,15 @@
       <div class="titulo-secao"><div><p>Feitos para adoçar</p><h2 id="titulo-cardapio">Nosso cardápio</h2></div><span>6 sabores para escolher</span></div>
       <!-- O JavaScript preenche esta lista com os dados dos produtos. -->
       <div class="produtos" id="lista-produtos"></div>
+      <p id="mensagem" role="status" aria-live="polite"></p>
       <noscript><p>Ative o JavaScript do navegador para visualizar os produtos.</p></noscript>
-      <p class="aviso">As imagens são ilustrativas. Nesta etapa, estamos apresentando o catálogo; o carrinho será adicionado em seguida.</p>
+      <p class="aviso">As imagens são ilustrativas. Pedidos e pagamentos são demonstrativos.</p>
+    </section>
+    <section class="cardapio carrinho" aria-labelledby="titulo-carrinho">
+      <h2 id="titulo-carrinho">Seu carrinho</h2>
+      <div id="itens-carrinho"></div>
+      <p class="total">Total: <strong id="total-carrinho">R$ 0,00</strong></p>
+      <p class="aviso">Você pode escolher de 1 a 20 unidades de cada sabor. A finalização do pedido será adicionada na próxima etapa.</p>
     </section>
   </main>
 

@@ -46,7 +46,7 @@ Não haverá cobrança real, cadastro/login ou painel administrativo nesta vers�
 | --- | --- | --- |
 | 1 | Preparar ferramentas, pasta e documentação inicial | Concluída |
 | 2 | Construir catálogo responsivo | Concluída |
-| 3 | Implementar carrinho | A fazer |
+| 3 | Implementar carrinho | Concluída |
 | 4 | Implementar servidor, banco e pedidos | A fazer |
 | 5 | Publicar e validar link público | A fazer |
 | 6 | Executar cinco testes internos e registrar evidências | A fazer |
@@ -72,7 +72,7 @@ O catálogo responsivo já pode ser aberto pelo arquivo `public/index.html`. Os 
 - `public/catalogo.js`: lista dos seis cupcakes e criação dos cartões pelo JavaScript.
 - `public/imagens/`: fotografias ilustrativas geradas para o projeto anterior e reaproveitadas nesta versão.
 
-Os produtos usam dados temporários no JavaScript. Depois serão carregados do banco pelo servidor. Nesta etapa não há botão de compra, pois o carrinho será implementado a seguir.
+Os produtos usam dados temporários no JavaScript. Depois serão carregados do banco pelo servidor. O carrinho permite adicionar, alterar e remover produtos, com quantidades entre 1 e 20. A função `salvarCarrinho` grava IDs e quantidades no `localStorage`; `mostrarCarrinho` atualiza a tela e calcula os totais em centavos. Os dados locais são validados ao carregar. A finalização será implementada na próxima etapa.
 
 ## Hospedagem gratuita
 
