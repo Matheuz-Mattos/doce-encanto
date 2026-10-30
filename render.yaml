@@ -1,0 +1,17 @@
+databases:
+  - name: doce-encanto-db
+    plan: free
+    databaseName: doce_encanto
+    user: doce_encanto
+services:
+  - type: web
+    name: doce-encanto-simples
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: doce-encanto-db
+          property: connectionString

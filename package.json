@@ -1,0 +1,9 @@
+{
+  "name": "doce-encanto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Loja acadêmica de cupcakes",
+  "scripts": { "start": "node servidor.js", "test": "node --test" },
+  "engines": { "node": ">=22" },
+  "dependencies": { "dotenv": "^17.2.3", "express": "^5.1.0", "pg": "^8.16.3" }
+}

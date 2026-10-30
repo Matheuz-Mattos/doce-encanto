@@ -47,7 +47,7 @@ Não haverá cobrança real, cadastro/login ou painel administrativo nesta vers�
 | 1 | Preparar ferramentas, pasta e documentação inicial | Concluída |
 | 2 | Construir catálogo responsivo | Concluída |
 | 3 | Implementar carrinho | Concluída |
-| 4 | Implementar servidor, banco e pedidos | A fazer |
+| 4 | Implementar servidor, banco e pedidos | Código pronto; integração PostgreSQL pendente |
 | 5 | Publicar e validar link público | A fazer |
 | 6 | Executar cinco testes internos e registrar evidências | A fazer |
 
@@ -75,5 +75,19 @@ O catálogo responsivo já pode ser aberto pelo arquivo `public/index.html`. Os 
 Os produtos usam dados temporários no JavaScript. Depois serão carregados do banco pelo servidor. O carrinho permite adicionar, alterar e remover produtos, com quantidades entre 1 e 20. A função `salvarCarrinho` grava IDs e quantidades no `localStorage`; `mostrarCarrinho` atualiza a tela e calcula os totais em centavos. Os dados locais são validados ao carregar. A finalização será implementada na próxima etapa.
 
 ## Hospedagem gratuita
+
+## Servidor e banco de dados
+
+Execute `npm install`, copie `.env.example` para `.env` e informe a conexão PostgreSQL em `DATABASE_URL`. Depois execute `npm start` e abra `http://localhost:3000`. O servidor cria as tabelas e carrega o catálogo automaticamente. Não publique o arquivo `.env`.
+
+- `servidor.js`: rotas HTTP, registro transacional e consulta por link privado.
+- `banco.js`: conexão PostgreSQL, tabelas e carga inicial.
+- `dados.js`: catálogo inicial com preços em centavos.
+- `validacao.js`: regras obrigatórias verificadas no servidor.
+- `test/validacao.test.js`: testes automatizados; execute `npm test`.
+
+O formulário envia somente os dados de entrega, IDs e quantidades. O preço do pedido é consultado no banco; mudanças no JavaScript do navegador não alteram esse preço. Pedido e itens são salvos juntos numa transação.
+
+O arquivo `render.yaml` configura serviço e banco gratuitos por Blueprint. A integração real com PostgreSQL e os testes do fluxo publicado ainda precisam ser executados.
 
 O Render gratuito pode suspender o serviço após inatividade e demorar aproximadamente um minuto para reabrir. O PostgreSQL gratuito expira em 30 dias; a publicação deverá considerar o período de avaliação.

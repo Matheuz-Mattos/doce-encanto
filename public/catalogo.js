@@ -124,3 +124,48 @@ function mostrarCarrinho() {
 }
 
 mostrarCarrinho();
+
+// Enviamos somente os IDs e as quantidades. O servidor determina o preço final.
+document.querySelector('#formulario-pedido').addEventListener('submit', async evento => {
+  evento.preventDefault();
+  const formulario = evento.currentTarget;
+  const retorno = document.querySelector('#retorno-pedido');
+  if (!Object.keys(carrinho).length) { retorno.textContent = 'Adicione um cupcake ao carrinho.'; return; }
+  const campos = new FormData(formulario);
+  const botao = formulario.querySelector('button');
+  botao.disabled = true; retorno.textContent = 'Salvando seu pedido...';
+  try {
+    const resposta = await fetch('/api/pedidos', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome: campos.get('nome'), endereco: campos.get('endereco'), pagamento: campos.get('pagamento'), itens: Object.entries(carrinho).map(([id, quantidade]) => ({ id: Number(id), quantidade })) })
+    });
+    const dados = await resposta.json();
+    if (!resposta.ok) throw new Error(dados.erro || 'Não foi possível salvar o pedido.');
+    carrinho = {}; salvarCarrinho(); formulario.reset();
+    retorno.textContent = 'Pedido salvo! Guarde o link abaixo para consultar.';
+    location.hash = `pedido=${dados.token}`;
+  } catch (erro) { retorno.textContent = erro instanceof SyntaxError ? 'O servidor de pedidos ainda não está conectado.' : erro.message; }
+  finally { botao.disabled = false; }
+});
+
+async function consultarPedido() {
+  if (!location.hash.startsWith('#pedido=')) return;
+  const token = location.hash.slice(8);
+  const area = document.querySelector('#consulta-pedido');
+  area.hidden = false; area.textContent = 'Consultando pedido...';
+  try {
+    const resposta = await fetch(`/api/pedidos/${encodeURIComponent(token)}`);
+    const pedido = await resposta.json();
+    if (!resposta.ok) throw new Error(pedido.erro);
+    area.replaceChildren();
+    const titulo = document.createElement('h2'); titulo.textContent = `Pedido ${pedido.status}`; area.append(titulo);
+    for (const texto of [`Cliente: ${pedido.nome}`, `Entrega: ${pedido.endereco}`, ...pedido.itens.map(item => `${item.quantidade} × ${item.nome}: ${moeda.format(item.quantidade * item.preco_centavos / 100)}`), `Total: ${moeda.format(pedido.total_centavos / 100)}`]) {
+      const p = document.createElement('p'); p.textContent = texto; area.append(p);
+    }
+    const link = document.createElement('a'); link.href = location.href; link.textContent = 'Link privado deste pedido (copie e guarde)'; area.append(link);
+    const aviso = document.createElement('p'); aviso.textContent = 'Quem tiver este link poderá consultar os dados do pedido.'; area.append(aviso);
+  } catch (erro) { area.textContent = erro.message; }
+  area.scrollIntoView({ block: 'start' });
+}
+window.addEventListener('hashchange', consultarPedido);
+consultarPedido();
