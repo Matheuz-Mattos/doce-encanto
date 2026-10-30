@@ -59,12 +59,3 @@ Capturas realizadas no site publicado em 29/10/2026 (Brasília), com dados de te
 
 ![Página Meus pedidos com acesso ao acompanhamento](imagens/05-historico.png)
 
-## Evidências para o documento da faculdade
-
-1. Captura do catálogo com três sabores e menu.
-2. Captura do carrinho com fotos e total.
-3. Captura dos campos de contato e opções de pagamento.
-4. Captura da confirmação e de Meus pedidos.
-5. Captura do terminal executando `npm test`.
-
-O histórico de commits no GitHub também permite consultar as alterações relacionadas a cada correção. As capturas acima estão disponíveis na pasta docs/imagens e podem ser inseridas no Word. A imagem do terminal executando os testes pode ser acrescentada pelo responsável.
