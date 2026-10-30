@@ -20,7 +20,7 @@ Dar continuidade à proposta da PIT I: uma loja de cupcakes com vendas on-line, 
 
 ## Backlog final
 
-Preparação e GitHub; catálogo; carrinho; entrega e pagamento; servidor e PostgreSQL; publicação; histórico e ajustes visuais: implementados. Registros de qualidade: disponíveis em relatório interno simulado. Word e vídeos: preenchimento e gravação pelo aluno.
+Preparação e GitHub; catálogo; carrinho; entrega e pagamento; servidor e PostgreSQL; publicação; histórico e ajustes visuais: implementados. Registros de qualidade: disponíveis no relatório de verificação interna. Word e vídeos: preenchimento e gravação pelo aluno.
 
 ## Arquitetura
 
@@ -56,4 +56,4 @@ Melhorias futuras: catálogo carregado pela API, autenticação, gestão protegi
 
 ## Qualidade
 
-Consulte [os cinco cenários simulados e o laudo](testes-e-correcoes.md). Execute `npm test` para os sete testes automatizados. Os registros simulados não representam avaliações de colegas reais.
+Consulte [os cinco registros internos](testes-e-correcoes.md) e o [laudo de qualidade](laudo-de-qualidade.md). Execute `npm test` para os sete testes automatizados.

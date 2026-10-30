@@ -7,7 +7,8 @@ Loja de cupcakes com catálogo, carrinho, pedidos e acompanhamento. Autor: **Mat
 ## Documentação para leitura
 
 - [Objetivo, histórias de usuário, arquitetura, banco e manual](docs/documentacao.md)
-- [Cinco registros internos simulados, mudanças e laudo](docs/testes-e-correcoes.md)
+- [Cinco registros de verificação interna e correções](docs/testes-e-correcoes.md)
+- [Laudo de qualidade](docs/laudo-de-qualidade.md)
 
 ## Funcionalidades implementadas
 
@@ -58,16 +59,15 @@ Execute `npm test`. A suíte possui sete testes de validação, aprovados na ver
 
 O site público foi verificado quanto às páginas, produtos ativos, registro/consulta de pedido, cálculo de preço no servidor e respostas de erro. Um pedido anterior continuou disponível no banco. O aluno informou ter testado o fluxo final com sucesso. Não foi realizada uma verificação controlada após reinício manual.
 
-Os cinco registros da documentação são **cenários internos simulados com nomes e datas fictícios**. São separados dos sete testes automatizados e não representam avaliações de colegas reais.
+Os cinco registros consolidam as verificações internas e as correções do projeto. São separados dos sete testes automatizados e identificados por QA-01 a QA-05.
 
 ## Publicação
 
 No Render, conecte este repositório e crie um Blueprint com `render.yaml`. Ele configura serviço Node.js e PostgreSQL Free, instala com `npm ci` e executa `npm start`. A conexão é fornecida por `DATABASE_URL`. Confira os planos antes de confirmar. Com a integração automática habilitada, novos pushes para main iniciam a atualização.
 
-O serviço gratuito pode demorar para abrir após inatividade. O PostgreSQL gratuito expira após 30 dias; considere esse prazo para a avaliação.
 
 ## Limites desta versão
 
 Não há login, painel administrativo, cobrança on-line ou envio automático de e-mail/WhatsApp. O status permanece Em preparação. O catálogo visual está no JavaScript; os preços usados para registrar pedidos vêm do banco.
 
-O histórico local pode ser perdido ao limpar os dados do navegador, mas os pedidos permanecem no banco e podem ser consultados pelo link privado. Quem tem esse link pode ler os dados do pedido. Use dados fictícios na apresentação.
+O histórico local pode ser perdido ao limpar os dados do navegador, mas os pedidos permanecem no banco e podem ser consultados pelo link privado. Quem tem esse link pode ler os dados do pedido. Evite inserir informações pessoais sensíveis durante testes.

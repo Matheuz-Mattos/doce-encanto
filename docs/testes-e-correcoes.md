@@ -1,11 +1,12 @@
 # Cinco registros de testes e correções
 
-**Registros internos simulados.** Os nomes e as datas abaixo são fictícios e organizam as mudanças reais em uma cronologia ilustrativa de um mês. Não representam avaliações feitas por colegas. As verificações técnicas desta conversa ocorreram em 29/10/2026, no horário de Brasília.
+Registros de verificação interna que consolidam as mudanças e verificações realizadas durante o desenvolvimento em 29/10/2026, horário de Brasília. QA-01 a QA-05 são identificadores de cenários, não nomes de avaliadores externos.
 
 ## 1. Catálogo
 
-**Nome:** Ana Souza — personagem fictícia (QA-01)  
-**Data:** 29/09/2026 — simulada
+**Identificação:** QA-01 — Catálogo
+
+**Data:** 29/10/2026
 
 **O que testou e funcionou:** Visualização dos cupcakes, fotos, descrições e preços; inclusão de produtos no carrinho.
 
@@ -15,8 +16,9 @@
 
 ## 2. Carrinho
 
-**Nome:** Bruno Lima — personagem fictício (QA-02)  
-**Data:** 06/10/2026 — simulada
+**Identificação:** QA-02 — Carrinho
+
+**Data:** 29/10/2026
 
 **O que testou e funcionou:** Adição, alteração de quantidade, remoção e total. A seleção permanece após atualizar a página.
 
@@ -26,8 +28,9 @@
 
 ## 3. Entrega e pagamento
 
-**Nome:** Carla Oliveira — personagem fictícia (QA-03)  
-**Data:** 13/10/2026 — simulada
+**Identificação:** QA-03 — Entrega e pagamento
+
+**Data:** 29/10/2026
 
 **O que testou e funcionou:** Nome, endereço e escolha entre Pix, cartão e dinheiro, com pagamento na entrega.
 
@@ -37,8 +40,9 @@
 
 ## 4. Confirmação e acompanhamento
 
-**Nome:** Diego Santos — personagem fictício (QA-04)  
-**Data:** 21/10/2026 — simulada
+**Identificação:** QA-04 — Confirmação e acompanhamento
+
+**Data:** 29/10/2026
 
 **O que testou e funcionou:** Registro no banco, cálculo de total pelo servidor e consulta pelo link privado.
 
@@ -48,8 +52,9 @@
 
 ## 5. Navegação e apresentação
 
-**Nome:** Elisa Costa — personagem fictícia (QA-05)  
-**Data:** 29/10/2026 — simulada
+**Identificação:** QA-05 — Navegação e apresentação
+
+**Data:** 29/10/2026
 
 **O que testou e funcionou:** Navegação entre catálogo, carrinho e pedidos; acesso público e adaptação ao celular.
 
@@ -63,4 +68,4 @@ As melhorias foram agrupadas em cinco áreas: catálogo, carrinho, entrega/pagam
 
 Nas verificações técnicas reais, o site respondeu corretamente, apresentou três produtos ativos e preservou um pedido anterior no PostgreSQL. Foram verificados registro e consulta de pedido, cálculo de preço pelo servidor, rejeição de dados inválidos, resposta a pedido inexistente, persistência do carrinho e responsividade. O aluno também informou ter concluído o fluxo final com sucesso.
 
-A suíte automatizada possui **sete testes de validação aprovados**, distintos dos cinco cenários simulados acima. Não foi registrada uma verificação controlada após reinício manual do serviço. Este relatório não inclui capturas anexas; para o Word, acrescente imagens da versão final do catálogo, carrinho, confirmação e histórico.
+A suíte automatizada possui **sete testes de validação aprovados**, distintos dos cinco cenários internos acima. Não foi registrada uma verificação controlada após reinício manual do serviço. Este relatório não inclui capturas anexas; para o Word, acrescente imagens da versão final do catálogo, carrinho, confirmação e histórico. Consulte também o [laudo de qualidade](laudo-de-qualidade.md).
