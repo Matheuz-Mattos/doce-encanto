@@ -23,6 +23,7 @@ async function prepararBanco() {
     ALTER TABLE pedidos ADD COLUMN IF NOT EXISTS telefone TEXT;
     ALTER TABLE pedidos ALTER COLUMN status SET DEFAULT 'Em preparação';
     UPDATE pedidos SET status = 'Em preparação' WHERE status = 'Recebido';
+    UPDATE produtos SET ativo = FALSE WHERE id IN (4, 5, 6);
   `);
   for (const p of produtos) {
     await banco.query('INSERT INTO produtos (id,nome,descricao,preco_centavos,imagem) VALUES ($1,$2,$3,$4,$5) ON CONFLICT (id) DO NOTHING', [p.id,p.nome,p.descricao,p.preco_centavos,p.imagem]);

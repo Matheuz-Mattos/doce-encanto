@@ -7,7 +7,7 @@ function validarPedido(dados) {
   if (typeof nome !== 'string' || nome.trim().length < 3 || nome.length > 100) throw new Error('Informe seu nome com 3 a 100 caracteres.');
   if (typeof endereco !== 'string' || endereco.trim().length < 10 || endereco.length > 400) throw new Error('Informe o endereço completo com 10 a 400 caracteres.');
   if (!['pix', 'cartao', 'dinheiro'].includes(pagamento)) throw new Error('Escolha uma forma de pagamento válida.');
-  if (!Array.isArray(itens) || itens.length < 1 || itens.length > 6) throw new Error('Escolha de 1 a 6 sabores.');
+  if (!Array.isArray(itens) || itens.length < 1 || itens.length > 3) throw new Error('Escolha de 1 a 3 sabores.');
   const ids = new Set();
   for (const item of itens) {
     if (!item || !Number.isInteger(item.id) || ids.has(item.id)) throw new Error('Produto inválido ou repetido.');

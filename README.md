@@ -19,7 +19,7 @@ Permitir que um visitante consulte cupcakes, monte um carrinho e registre um ped
 
 ## Funcionalidades planejadas
 
-- Catálogo com seis cupcakes.
+- Catálogo com três cupcakes, cada um com sua própria imagem.
 - Carrinho com inclusão, alteração de quantidade e remoção.
 - Formulário com nome, endereço e pagamento simulado.
 - Validação e cálculo de preços no servidor.
@@ -69,7 +69,7 @@ O catálogo responsivo já pode ser aberto pelo arquivo `public/index.html`. Os 
 
 - `public/index.html`: estrutura da página, cabeçalho, apresentação e espaço do catálogo.
 - `public/estilo.css`: cores, tamanhos, grade de produtos e adaptação ao celular.
-- `public/catalogo.js`: lista dos seis cupcakes e criação dos cartões pelo JavaScript.
+- `public/catalogo.js`: lista dos três cupcakes e criação dos cartões pelo JavaScript.
 - `public/imagens/`: fotografias ilustrativas geradas para o projeto anterior e reaproveitadas nesta versão.
 
 Os produtos usam dados temporários no JavaScript. Depois serão carregados do banco pelo servidor. O carrinho permite adicionar, alterar e remover produtos, com quantidades entre 1 e 20. A função `salvarCarrinho` grava IDs e quantidades no `localStorage`; `mostrarCarrinho` atualiza a tela e calcula os totais em centavos. Os dados locais são validados ao carregar. A finalização será implementada na próxima etapa.

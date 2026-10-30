@@ -2,10 +2,7 @@
 const produtos = [
   { id: 1, nome: 'Brigadeiro intenso', descricao: 'Massa de chocolate, brigadeiro cremoso e granulado.', preco: 12.50, imagem: 'brigadeiro.png' },
   { id: 2, nome: 'Morango delicado', descricao: 'Massa de baunilha e cobertura cremosa de morango.', preco: 11.90, imagem: 'morango.png' },
-  { id: 3, nome: 'Baunilha com caramelo', descricao: 'Baunilha macia, caramelo e um toque crocante.', preco: 12.90, imagem: 'caramelo.png' },
-  { id: 4, nome: 'Chocolate clássico', descricao: 'Massa e cobertura de chocolate para quem ama cacau.', preco: 10.90, imagem: 'brigadeiro.png' },
-  { id: 5, nome: 'Morango com chocolate', descricao: 'Uma combinação de chocolate com creme de morango.', preco: 13.50, imagem: 'morango.png' },
-  { id: 6, nome: 'Doce de leite', descricao: 'Massa de baunilha com cobertura de doce de leite.', preco: 12.00, imagem: 'caramelo.png' }
+  { id: 3, nome: 'Baunilha com caramelo', descricao: 'Baunilha macia, caramelo e um toque crocante.', preco: 12.90, imagem: 'caramelo.png' }
 ];
 
 // Intl.NumberFormat mostra os valores no padrão brasileiro: R$ 12,50.
